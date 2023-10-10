@@ -1,7 +1,7 @@
 //----GLOBAL VARIABLES SEARCH RESULTS----//
 var form = $('#my-form');
 var mapDiv = $('#insert-map');
-var mykey = config.MY_KEY;
+var mykey = "AIzaSyDVi-GKGACDGCuHrw";
 //var searchInput = $('#searchInputField');
 
 //this function will parse the URL and get event data from the ticketmaster API
@@ -19,7 +19,7 @@ function getMapData(data){
 
             for (var i = 0; i < numberOfEvents; i++) {
             var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
-            var requestUrl = googleSrc + "key=" + mykey + "&q=" + eventVenue;
+            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + eventVenue;
             displayMapResults(requestUrl);
         }
     } else {
@@ -44,7 +44,7 @@ function displayMapResults(requestUrl){
 //super janky version
 function getApi(){ 
     
-    var requestUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?keyword=drake&countryCode=US&apikey=drGLGyf4VsdbAnIfEkn6xrA1QAWMUH7O';
+    var requestUrl = '  ';
 
     console.log(requestUrl);
 
