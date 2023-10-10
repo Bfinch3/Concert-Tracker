@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concert Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+
+      <section class="hero is-medium is-dark">
+        <div class="hero-body">
+            <h1 class="title is-size-1">
+                Concert Tracker
+            </h1>
+              <p class="subtitle is-size-4">
+                Search by City or Artist
+              </p>
+            <figure class="image is-3by1">
+                <img class="has-ratio" width="720" height="240" src="./assets/pexels-wolfgang-2747450.jpg" frameborder="0" allowfullscreen alt="crowd at concert"></img>
+              </figure>
+              <p class="subtitle is-size-4 mt-2">
+                Find the bands you love in your town!
+              </p>
+        </div>
+      </section>
+      <section class="search-options">
+        <form>
+          <div class="field has-addons columns is-centered mb-2">
+              <div class="control" id="search-city">
+                <input class="input" type="text" placeholder="Search by City">
+              </div>
+          </div>
+        
+          <div class="field has-addons columns is-centered mt-2">
+              <div class="control" id="search-artist">
+                <input class="input" type="text" placeholder="Search by Artist">
+              </div>
+
+            </div>
+            <div class="control">
+              <a class="button is-info columns is-one-third mt-2">
+                  Search
+              </a>
+            </div>
+          </div>
+        </form>  
+      </section>
+     
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="./assets/script.js"></script>
 </body>
 </html>
