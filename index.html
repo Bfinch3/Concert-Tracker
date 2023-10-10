@@ -12,23 +12,39 @@
 </head>
 <body>
 
-      <section class="hero is-medium is-dark">
+      <section class="hero is-small is-dark">
         <div class="hero-body">
-            <h1 class="title is-size-1">
+          <div class="block is-flex is-justify-content-space-evenly mt-2">
+            <figure class="image is-128x128">
+              <img src="./assets/images/pexels-annam-w-1047443.jpg">
+            </figure>
+            <figure class="image is-128x128">
+              <img src="./assets/images/pexels-josh-sorenson-995301.jpg">
+            </figure>
+            <figure class="image is-128x128">
+              <img src="./assets/images/pexels-microphone.jpg">
+            </figure>
+            <figure class="image is-128x128">
+              <img src="./assets/images/pexels-vitalina-3807093.jpg">
+            </figure>
+          </div>
+
+            <h1 class="title is-size-1 has-text-warning-dark">
                 Concert Tracker
             </h1>
-              <p class="subtitle is-size-4">
+              <p class="subtitle is-size-4 has-text-warning-dark">
                 Search by City or Artist
               </p>
             <figure class="image is-3by1">
-                <img class="has-ratio" width="720" height="240" src="./assets/pexels-wolfgang-2747450.jpg" frameborder="0" allowfullscreen alt="crowd at concert"></img>
+                <img class="has-ratio" width="720" height="240" src="./assets/images/pexels-wolfgang-2747450.jpg"  allowfullscreen alt="crowd at concert"></img>
               </figure>
-              <p class="subtitle is-size-4 mt-2">
+              <p class="subtitle is-size-4 mt-5 has-text-warning-dark">
                 Find the bands you love in your town!
               </p>
         </div>
       </section>
-      <section class="search-options">
+
+      <section class="search-options has-background-light p-0 my-0">
         <form>
           <div class="field has-addons columns is-centered mb-2">
               <div class="control" id="search-city">
@@ -42,15 +58,15 @@
               </div>
 
             </div>
-            <div class="control">
-              <a class="button is-info columns is-one-third mt-2">
+            <div class="control is-flex">
+              <a class="button is-info columns mx-auto mt-1">
                   Search
               </a>
             </div>
           </div>
         </form>  
       </section>
-     
+
 
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

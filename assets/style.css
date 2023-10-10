@@ -11,5 +11,8 @@
     text-align: center;
 }
 
-
+img {
+    border: black solid 6px;
+    border-radius: 5px;
+}
 
