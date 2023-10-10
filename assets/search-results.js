@@ -44,7 +44,7 @@ function displayMapResults(requestUrl){
 //super janky version
 function getApi(){ 
     
-    var requestUrl = '  ';
+    var requestUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?size=1&keyword=drake&apikey=drGLGyf4VsdbAnIfEkn6xrA1QAWMUH7O';
 
     console.log(requestUrl);
 
