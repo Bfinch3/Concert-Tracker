@@ -7,3 +7,20 @@ Header {
 .card-image {
     background-color: blue;
 }
+
+
+:root {
+    --darkblue: #2718AD;
+    --darkgray: #423C7A;
+    --blue: #367FE0;
+    --lightbrown: #E4AF70;
+    --brown: #AD6A3E;
+}
+
+.hero-body {
+    font-family: "Anton", serif;
+    text-align: center;
+}
+
+
+
