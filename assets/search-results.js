@@ -33,26 +33,6 @@ function getEventApi(data) {
 
 }
 
-//this function will parse the URL and get the map data from the Google map API 
-function getMapData(data) {
-
-    var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
-
-    // if (data._embedded && data._embedded.events) {
-    //     var numberOfEvents = data._embedded.events.length
-
-        // for (var i = 0; i < numberOfEvents; i++) {
-            // var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
-            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + data;
-            displayMapResults(requestUrl);
-            console.log(requestUrl);
-        // }
-    // } else {
-    //     $("#insert-map").text("Sorry, there are no results in your area!");
-    // }
-
-}
-
 //this function will create and append the HTML for the results received from the ticketmaster API
 function displayEventResults(data) {
     console.log("test1");
@@ -66,38 +46,69 @@ function displayEventResults(data) {
             var city = data._embedded.events[i]._embedded.venues[0].city.name
             var state = data._embedded.events[i]._embedded.venues[0].state.name
             var image = data._embedded.events[i].images[0].url
+
+            //getMapData(location);
+
+            var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
+            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + location;
+            var mapIframe = `<iframe width="100%" height="300px" src="${requestUrl}"></iframe>`;
+
+            console.log(requestUrl);
+            
             console.log(`${artistName} is playing at ${location} in ${city}, ${state}`)
             form.append(`  <div class="card-image has-text-centered">
-<img src="${image}">
-</div>
-<div class="card-content">
-<ul>
-    <li>Artist: ${artistName}</li>
-    <li>Location: ${location} in ${city}, ${state}</li>
-</ul>
-</div>
-<div>
-<footer class="card-footer">
-    <a class="button is-primary is-centered" href="${salesUrl}">Buy Tickets</a>
-</footer>
-<div id="insert-map"> ${getMapData(location)}</div>
+                <img src="${image}">
+                </div>
+                <div class="card-content">
+                <ul>
+                    <li>Artist: ${artistName}</li>
+                    <li>Location: ${location} in ${city}, ${state}</li>
+                </ul>
+                </div>
+                <div>
+                <footer class="card-footer">
+                    <a class="button is-primary is-centered" href="${salesUrl}">Buy Tickets</a>
+                </footer>
+                <div id="insert-map"> ${mapIframe} </div>
 
-</div>`);
-// getMapData(location);
-console.log(location);
+                </div>`);
+            
+            console.log(location);
+    
         }
     } else {
         form.text("Sorry, there are no results in your area!");
     }
 }
 
-//this function will create and append the HTML for the results received from the Google map API
-function displayMapResults(requestUrl) {
-console.log("test2");
-    var mapIframe = $('<iframe></iframe>').attr('src', requestUrl);
-    $("#insert-map").append(mapIframe); //may need to add attributes or classes
+
+//this function will parse the URL and get the map data from the Google map API 
+function getMapData(data) {
+
+    var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
+
+    // if (data._embedded && data._embedded.events) {
+    //     var numberOfEvents = data._embedded.events.length
+
+        // for (var i = 0; i < numberOfEvents; i++) {
+            // var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
+            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + data;
+            return(requestUrl);
+            //console.log(requestUrl);
+        // }
+    // } else {
+    //     $("#insert-map").text("Sorry, there are no results in your area!");
+    // }
 
 }
+
+//this function will create and append the HTML for the results received from the Google map API
+// function displayMapResults(requestUrl) {
+// console.log("test2");
+//     var mapIframe = $('<iframe></iframe>').attr('src', requestUrl);
+//     $("#insert-map").append(mapIframe); //may need to add attributes or classes
+
+// }
 
 //super janky version
 function getApi(requestUrl) {
