@@ -8,10 +8,11 @@ $(document).ready(function () {
     $('a').click(function (event) {
         var location = locationText.val() != undefined ? locationText.val() : '';
         var artist = artistText.val() != undefined ? artistText.val() : '';
-
-        localStorage.setItem('city', location);
-        localStorage.setItem('artist', artist);
-
+        var state = location.split(',')[1]
+        var city = location.split(',')[0]
+        localStorage.setItem('city', city.toLowerCase());
+        localStorage.setItem('artist', artist.toLowerCase());
+        localStorage.setItem('state', state?.trim().toLowerCase())
         window.location.href = `search-results.html`
 
     })
