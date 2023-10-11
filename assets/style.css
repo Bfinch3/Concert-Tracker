@@ -1,3 +1,11 @@
+:root {
+    --darkblue: #2718AD;
+    --darkgray: #423C7A;
+    --blue: #367FE0;
+    --lightbrown: #E4AF70;
+    --brown: #AD6A3E;
+}
+
 Header {
     border-bottom: 10px solid blue;
     border-right: 10px solid blue;
@@ -27,4 +35,5 @@ img {
     border: black solid 6px;
     border-radius: 5px;
 }
+
 
