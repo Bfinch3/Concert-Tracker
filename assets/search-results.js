@@ -1,6 +1,6 @@
 //----GLOBAL VARIABLES SEARCH RESULTS----//
 var form = $('#results');
-var mapDiv = $('#insert-map');
+// var insert = $('#insert-map');
 var mykey = "AIzaSyDVi-GKGACDGCuHrw";
 //var searchInput = $('#searchInputField');
 $(document).ready(function () {
@@ -38,22 +38,24 @@ function getMapData(data) {
 
     var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
 
-    if (data._embedded && data._embedded.events) {
-        var numberOfEvents = data._embedded.events.length
+    // if (data._embedded && data._embedded.events) {
+    //     var numberOfEvents = data._embedded.events.length
 
-        for (var i = 0; i < numberOfEvents; i++) {
-            var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
-            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + eventVenue;
+        // for (var i = 0; i < numberOfEvents; i++) {
+            // var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
+            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + data;
             displayMapResults(requestUrl);
-        }
-    } else {
-        mapDiv.text("Sorry, there are no results in your area!");
-    }
+            console.log(requestUrl);
+        // }
+    // } else {
+    //     $("#insert-map").text("Sorry, there are no results in your area!");
+    // }
 
 }
 
 //this function will create and append the HTML for the results received from the ticketmaster API
 function displayEventResults(data) {
+    console.log("test1");
     if (data._embedded && data._embedded.events) {
         var numberOfEvents = data._embedded.events.length
 
@@ -78,7 +80,11 @@ function displayEventResults(data) {
 <footer class="card-footer">
     <a class="button is-primary is-centered" href="${salesUrl}">Buy Tickets</a>
 </footer>
-</div>`)
+<div id="insert-map"> ${getMapData(location)}</div>
+
+</div>`);
+// getMapData(location);
+console.log(location);
         }
     } else {
         form.text("Sorry, there are no results in your area!");
@@ -87,9 +93,9 @@ function displayEventResults(data) {
 
 //this function will create and append the HTML for the results received from the Google map API
 function displayMapResults(requestUrl) {
-
+console.log("test2");
     var mapIframe = $('<iframe></iframe>').attr('src', requestUrl);
-    mapDiv.append(mapIframe); //may need to add attributes or classes
+    $("#insert-map").append(mapIframe); //may need to add attributes or classes
 
 }
 
@@ -105,7 +111,6 @@ function getApi(requestUrl) {
         .then(function (data) {
             console.log('Ticketmaster API \n----------');
             console.log(data);
-            getMapData(data);
-            displayEventResults(data)
+            displayEventResults(data);
         });
 }

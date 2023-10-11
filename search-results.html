@@ -7,34 +7,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body style="display: hidden;">
+<body id="resultPage" style="display: hidden;">
     <Header>
-        <figure class="image is-3by1">
-            <img src="assets/image/guitars-2912447_1280.webp">
-        </figure>
+        <div class="container"></div>
+            <figure class="image is-3by1">
+                <img src="assets/image/guitars-2912447_1280.webp">
+            </figure>
+        </div>
     </Header>
     
-    <section class="section" id="resultPage">
-        <div class="container">
+    <section class="section">
+        <div class="container is-centered">
             <h2 class="title has-text-centered is-size-3">Event Details</h2>
-            <div class="columns mt-5 is-1 is-variable">
-                <div class="card">
-                    <div class="card-image has-text-centered">
-                        <img src="assets/image/vinyl-2241789_640.png">
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li>Artist:</li>
-                            <li>Location:</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <footer class="card-footer">
-                            <a class="button is-primary is-centered">Buy Tickets</a>
-                        </footer>
+            <div class="columns ">
+                <div class="column is-4 mt-6">
+                    <div class="card">
+                        <div id="results"></div>
                     </div>
                 </div>
-                <div class="columns mt-5 is-1 is-right" id="insert-map"></div>
+                <div class="column is-4 mt-1">
+                    <div></div>
             </div>
         </div>
     
