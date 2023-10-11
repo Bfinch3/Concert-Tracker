@@ -83,24 +83,24 @@ function displayEventResults(data) {
 
 
 //this function will parse the URL and get the map data from the Google map API 
-function getMapData(data) {
+// function getMapData(data) {
 
-    var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
+//     var googleSrc = 'https://www.google.com/maps/embed/v1/place?';
 
-    // if (data._embedded && data._embedded.events) {
-    //     var numberOfEvents = data._embedded.events.length
+//     // if (data._embedded && data._embedded.events) {
+//     //     var numberOfEvents = data._embedded.events.length
 
-        // for (var i = 0; i < numberOfEvents; i++) {
-            // var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
-            var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + data;
-            return(requestUrl);
-            //console.log(requestUrl);
-        // }
-    // } else {
-    //     $("#insert-map").text("Sorry, there are no results in your area!");
-    // }
+//         // for (var i = 0; i < numberOfEvents; i++) {
+//             // var eventVenue = data._embedded.events[i]._embedded.venues[0].name;
+//             var requestUrl = googleSrc + "key=" + mykey + "RzhM10mkpiS3mtjBE&q=" + data;
+//             return(requestUrl);
+//             //console.log(requestUrl);
+//         // }
+//     // } else {
+//     //     $("#insert-map").text("Sorry, there are no results in your area!");
+//     // }
 
-}
+// }
 
 //this function will create and append the HTML for the results received from the Google map API
 // function displayMapResults(requestUrl) {
