@@ -7,13 +7,23 @@
 }
 
 Header {
-    border-bottom: 10px solid blue;
-    border-right: 10px solid blue;
-    border-left: 10px solid blue;
+    background-color: #c75d16;
 }
 
 .card-image {
-    background-color: blue;
+    background-color: #c75d16;
+}
+
+.title {
+    font-family: "Anton", serif;
+    color: black;
+}
+
+.section {
+    border-right: 50px solid #c75d16;
+    border-left: 50px solid #c75d16;
+    border-bottom: 40px solid #c75d16;
+    background-color: lightgray;
 }
 
 
